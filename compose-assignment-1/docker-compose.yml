@@ -1,0 +1,18 @@
+version: "2"
+
+services:
+  drupal:
+    image: drupal:8.8.2
+    ports: 
+      - "8081:80"
+    volumes:
+      - /var/www/html/modules
+      - /var/www/html/profiles
+      - /var/www/html/themes
+      - /var/www/html/sites
+  postgres:
+    image: postgres:12.1
+    environment: 
+      POSTGRES_DB: postgres
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: pass 
